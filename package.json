@@ -12,7 +12,7 @@
     "test:api": "node --test tests/reported/api.test.mjs tests/additional/api.test.mjs",
     "test:ui": "playwright test tests/reported",
     "test:ui:additional": "playwright test tests/additional",
-    "test:all": "npm run test:api; playwright test"
+    "test:all": "npm run test:api && playwright test"
   },
   "dependencies": {
     "express": "^4.19.2"
