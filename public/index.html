@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Effort Log Timesheet</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="app-header">
+    <h1>Effort Log Timesheet</h1>
+    <div class="tooling-controls">
+      <a id="specLink" href="/spec" target="_blank" title="Tooling: view app spec (not part of the app)">📋 Spec</a>
+      <a id="apiCollectionLink" href="/openapi.json" target="_blank" title="Tooling: OpenAPI collection (not part of the app)">📥 API collection</a>
+      <button type="button" id="resetBtn" title="Tooling: resets sample data (not part of the app)">↺ Reset data</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <div id="app-section">
+  <section class="card">
+    <h2>Log Effort</h2>
+    <form id="logForm">
+      <label>Agent
+        <select id="agentId"></select>
+      </label>
+      <label>Candidate
+        <select id="candidateId"></select>
+      </label>
+      <label>Date
+        <input type="date" id="date">
+      </label>
+      <label>Minutes
+        <input type="number" id="minutes" placeholder="1-480" min="1" max="480" step="1" required>
+      </label>
+      <button type="submit">Add Log</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Filter</h2>
+    <label>Agent
+      <select id="filterAgentId"><option value="">All</option></select>
+    </label>
+    <label>Date
+      <input type="date" id="filterDate">
+    </label>
+    <button id="clearFilter">Clear</button>
+  </section>
+
+  <section class="card">
+    <h2>Entries</h2>
+    <table>
+      <thead><tr><th>Agent</th><th>Candidate</th><th>Date</th><th>Minutes</th><th>Hours</th></tr></thead>
+      <tbody id="logRows"></tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>Analytics</h2>
+    <table>
+      <thead><tr><th>Agent</th><th>Entries</th><th>Total Minutes</th><th>Total Hours</th><th>Avg Minutes/Entry</th></tr></thead>
+      <tbody id="analyticsRows"></tbody>
+    </table>
+  </section>
+  </div>
+</div>
+<script src="app.js"></script>
+<script>window.SV_APP_ID='14';window.SV_SCOREBOARD='https://sv-qa-scoreboard.onrender.com';</script>
+<script src="report-widget.js"></script>
+</body>
+</html>

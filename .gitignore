@@ -1,0 +1,25 @@
+# Dependency directories
+node_modules/
+
+# Playwright test output
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Production build output
+dist/
+build/
+*.log
+
+# Local environment settings
+.env
+.env.local
+
+# Miscellaneous
+.DS_Store
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace

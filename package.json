@@ -1,0 +1,23 @@
+{
+  "name": "effort-log-timesheet",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "npm run test:reported",
+    "test:reported": "node --test tests/reported/api.test.mjs",
+    "test:additional": "node --test tests/additional/api.test.mjs",
+    "test:api": "node --test tests/reported/api.test.mjs tests/additional/api.test.mjs",
+    "test:ui": "playwright test tests/reported",
+    "test:ui:additional": "playwright test tests/additional",
+    "test:all": "npm run test:api; playwright test"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}
