@@ -207,7 +207,7 @@ Returns per-agent aggregated timesheet metrics.
 
 ---
 
-## Bug Audit & Resolution Summary
+## Bug Audit & Resolutn
 
 ### Phase 1: 14 Reported Defects
 | # | Area | Defect | Root Cause & Resolution |
